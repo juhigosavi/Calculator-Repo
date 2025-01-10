@@ -1,0 +1,104 @@
+body {
+	background: radial-gradient(circle, #ffffff, #ffffff);
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+fieldset {
+	width: 350px;
+	height: 600px;
+	padding: 20px;
+	margin: 30px auto;
+	background: linear-gradient(to bottom, #b4c5d8, #041e44);
+	border-radius: 15px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+	border: 5px solid rgba(0, 0, 0, 0.8);
+	animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0;
+}
+
+.button_digits, .buttonmathButtons, .deleteLast, .buttonmaths, .buttonmathButton, .buttonmathButtons1 {
+	height: 70px;
+	width: 70px;
+	border-radius: 20%;
+	font-size: 30px;
+	border: none;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.button_digits:hover, .buttonmaths:hover, .buttonmathButtons:hover, .deleteLast:hover, .buttonmathButton:hover, .buttonmathButtons1:hover {
+	transform: scale(1.1);
+	filter: brightness(1.3);
+}
+
+.button_digits {
+	background: linear-gradient(145deg, #000000,#000000);
+	color: white;
+}
+
+.buttonmathButtons, .deleteLast, .buttonmathButton, .buttonmathButtons1 {
+	background: linear-gradient(145deg, #ffa726, #ff9800);
+	color: black;
+}
+
+.buttonmaths {
+	background: linear-gradient(145deg, #ffffff, #e0e0e0);
+	color: black;
+}
+
+#display {
+	height: 70px;
+	width: 330px;
+	border-radius: 8px;
+	padding: 10px;
+	margin-top: 10px;
+	font-size: 50px;
+	text-align: right;
+	box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.5);
+	border: 2px solid #000;
+	background-color: #f8f8f8;
+	color: #333;
+	transition: box-shadow 0.3s ease;
+}
+
+#display:focus {
+	box-shadow: 0 0 10px #4a90e2;
+}
+
+.buttonmathButton, .buttonmathButtons1 {
+	font-size: 28px;
+	line-height: 1.5;
+}
+
+.deleteLast {
+	font-size: 24px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="cal style.css">
+    <script>
+        function deleteLast() {
+            let display = document.getElementById("display").value;
+            document.getElementById("display").value = display.slice(0, -1);
+        }
+
+        function appendValue(value) {
+            let display = document.getElementById("display");
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = '';
+        }
+
+        function calculateResult() {
+            try {
+                let display = document.getElementById("display");
+                display.value = eval(display.value);
+            } catch (error) {
+                alert("Invalid Expression");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <fieldset id="container">
+            <div class="calc2i">
+                <form name="calculator">
+                    <input id="display" type="text" name="display" readonly>
+                    <br><br>
+
+                    <div class="row">
+                        <input id="clearButton" class="buttonmathButtons1" type="button" value="C" onclick="clearDisplay()">
+                        <input class="button_digits" type="button" value="(" onclick="appendValue('(')">
+                        <input class="button_digits" type="button" value=")" onclick="appendValue(')')">
+                        <input class="deleteLast" type="button" value="⌫" onclick="deleteLast()">
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <input class="button_digits" type="button" value="7" onclick="appendValue('7')">
+                        <input class="button_digits" type="button" value="8" onclick="appendValue('8')">
+                        <input class="button_digits" type="button" value="9" onclick="appendValue('9')">
+                        <input class="buttonmathButtons" type="button" value="×" onclick="appendValue('*')">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <input class="button_digits" type="button" value="4" onclick="appendValue('4')">
+                        <input class="button_digits" type="button" value="5" onclick="appendValue('5')">
+                        <input class="button_digits" type="button" value="6" onclick="appendValue('6')">
+                        <input class="buttonmathButtons" type="button" value="÷" onclick="appendValue('/')">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <input class="button_digits" type="button" value="1" onclick="appendValue('1')">
+                        <input class="button_digits" type="button" value="2" onclick="appendValue('2')">
+                        <input class="button_digits" type="button" value="3" onclick="appendValue('3')">
+                        <input class="buttonmathButtons" type="button" value="-" onclick="appendValue('-')">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <input class="buttonmaths" type="button" value="." onclick="appendValue('.')">
+                        <input class="button_digits" type="button" value="0" onclick="appendValue('0')">
+                        <input class="buttonmathButton" type="button" value="=" onclick="calculateResult()">
+                        <input class="buttonmathButtons" type="button" value="+" onclick="appendValue('+')">
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>
